@@ -1,19 +1,66 @@
-import { useEffect } from 'react'
+import { MouseEventHandler } from 'react'
 
 export default function Home() {
-  useEffect(() => {
-    const options = 'width=500, height=600'
-    window.open(
-      'https://m.search.naver.com/search.naver?sm=mtp_hty.top&where=m&query=%EB%A7%88%EC%9D%B4%EB%94%94+%EC%95%B1%ED%85%8C%ED%81%AC',
-      '',
-      options
-    )
-    window.open('https://m.naver.com/', '', options)
+  const popupOptions = 'width=500, height=600'
+  const handlePopup = (uri: string) => () => window.open(uri, '', popupOptions)
+  const handleCopyClip: MouseEventHandler<HTMLButtonElement> = (e) => {
+    const { textContent } = e.currentTarget
+    if (!textContent) return
 
-    // setTimeout(() => {
-    //   myWindow?.close()
-    // }, 1000)
-  }, [])
+    navigator.clipboard
+      .writeText(textContent)
+      .then(() => {
+        // eslint-disable-next-line no-console
+        console.log('success')
+      })
+      .catch(() => {
+        // eslint-disable-next-line no-console
+        console.log('failure')
+      })
+  }
 
-  return <div>Home</div>
+  return (
+    <ul>
+      <li>
+        <button type='button' onClick={handlePopup('https://m.naver.com/')}>
+          네이버
+        </button>
+      </li>
+      <li>
+        <button type='button' onClick={handlePopup('https://m.daum.net/')}>
+          카카오
+        </button>
+      </li>
+      <li>
+        <button type='button' onClick={handleCopyClip}>
+          마이디
+        </button>
+      </li>
+      <li>
+        <button type='button' onClick={handleCopyClip}>
+          마이디 앱테크
+        </button>
+      </li>
+      <li>
+        <button type='button' onClick={handleCopyClip}>
+          마이디 데이터거래
+        </button>
+      </li>
+      <li>
+        <button type='button' onClick={handleCopyClip}>
+          마이디 마이데이터
+        </button>
+      </li>
+      <li>
+        <button type='button' onClick={handleCopyClip}>
+          마이디 제테크
+        </button>
+      </li>
+      <li>
+        <button type='button' onClick={handleCopyClip}>
+          마이디 포인트
+        </button>
+      </li>
+    </ul>
+  )
 }
