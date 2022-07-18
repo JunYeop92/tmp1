@@ -1,0 +1,1 @@
+제가 사용하는 기초적인 환경설정이 된 프로젝트입니다. ESLint, Prettier, Stylelint가 설정되어 있습니다.
