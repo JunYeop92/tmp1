@@ -14,8 +14,8 @@ export default function CopyClipButton({ text }: IProps) {
 
   const notify = () =>
     toast('클립보드에 저장되었습니다.', {
-      position: 'top-center',
-      autoClose: 1000,
+      position: 'bottom-center',
+      autoClose: 300,
     })
 
   const handleCopyClip: MouseEventHandler<HTMLButtonElement> = (e) => {
