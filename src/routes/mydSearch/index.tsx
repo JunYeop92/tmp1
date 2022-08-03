@@ -1,7 +1,6 @@
 import styles from './index.module.scss'
 import Button from './Button'
 import CopyClipButton from './CopyClipButton'
-import { useEffect, useRef } from 'react'
 
 const copyDatas = [
   '마이디',
@@ -13,22 +12,27 @@ const copyDatas = [
 ]
 export default function MydSearch() {
   const tmp1 = () => {
+    window.open('https://m.search.naver.com/search.naver?sm=mtp_hty.top&where=m&query=%EB%A7%88%EC%9D%B4%EB%94%94')
+
+    // const win2 = window.open(
+    //   'https://m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&oquery=%EB%A7%88%EC%9D%B4%EB%94%94&tqi=hXo3pdqVWdossQFZBh0ssssssFl-480932&query=%EB%A7%88%EC%9D%B4%EB%94%94+%EC%95%B1%ED%85%8C%ED%81%AC'
+    // )
+
+    // const win3 = window.open(
+    //   'https://m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&oquery=%EB%A7%88%EC%9D%B4%EB%94%94&tqi=hXo3pdqVWdossQFZBh0ssssssFl-480932&query=%EB%A7%88%EC%9D%B4%EB%94%94+%EC%95%B1%ED%85%8C%ED%81%AC'
+    // )
+
+    // setTimeout(() => {
+    //   win1?.close()
+    //   win2?.close()
+    //   win3?.close()
+    // }, 1000)
+  }
+
+  const tmp2 = () => {
     window.open(
       'https://m.search.naver.com/search.naver?sm=mtp_hty.top&where=m&query=%EB%A7%88%EC%9D%B4%EB%94%94',
-      '',
-      'noopener noreferrer'
-    )
-
-    window.open(
-      'https://m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&oquery=%EB%A7%88%EC%9D%B4%EB%94%94&tqi=hXo3pdqVWdossQFZBh0ssssssFl-480932&query=%EB%A7%88%EC%9D%B4%EB%94%94+%EC%95%B1%ED%85%8C%ED%81%AC',
-      '',
-      'noopener noreferrer'
-    )
-
-    window.open(
-      'https://m.search.naver.com/search.naver?sm=mtb_hty.top&where=m&oquery=%EB%A7%88%EC%9D%B4%EB%94%94&tqi=hXo3pdqVWdossQFZBh0ssssssFl-480932&query=%EB%A7%88%EC%9D%B4%EB%94%94+%EC%95%B1%ED%85%8C%ED%81%AC',
-      '',
-      'noopener noreferrer'
+      '_self'
     )
   }
 
@@ -39,7 +43,11 @@ export default function MydSearch() {
   return (
     <div className={styles.wrapper}>
       <Button type='button' onClick={tmp1}>
-        한 번에 열기
+        한 번에 열기(popup)
+      </Button>
+
+      <Button type='button' onClick={tmp2}>
+        한 번에 열기(self)
       </Button>
 
       <section>
