@@ -1,0 +1,33 @@
+@use '/src/styles/constants/colors';
+@use '/src/styles/mixins/responsive';
+
+.wrapper {
+  width: 80%;
+
+  @include responsive.after(SD) {
+    width: fit-content;
+  }
+
+  section {
+    position: relative;
+    display: flex;
+    align-items: center;
+    padding: 20px 10px 10px;
+    margin-bottom: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+
+    h2 {
+      position: absolute;
+      top: 0;
+      background-color: colors.$WHITE;
+      transform: translateY(-50%);
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 0;
+    }
+  }
+}
