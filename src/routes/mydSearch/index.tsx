@@ -52,21 +52,21 @@ export default function MydSearch() {
       'https://m.search.daum.net/search?nil_profile=btn&w=tot&DA=SBC&q=%EB%A7%88%EC%9D%B4%EB%94%94+%ED%8F%AC%EC%9D%B8%ED%8A%B8'
     )
 
-    setTimeout(() => {
-      win1?.close()
-      win2?.close()
-      win3?.close()
-      win4?.close()
-      win5?.close()
-      win6?.close()
+    // setTimeout(() => {
+    //   win1?.close()
+    //   win2?.close()
+    //   win3?.close()
+    //   win4?.close()
+    //   win5?.close()
+    //   win6?.close()
 
-      win7?.close()
-      win8?.close()
-      win9?.close()
-      win10?.close()
-      win11?.close()
-      win12?.close()
-    }, 1000)
+    //   win7?.close()
+    //   win8?.close()
+    //   win9?.close()
+    //   win10?.close()
+    //   win11?.close()
+    //   win12?.close()
+    // }, 1000)
   }
 
   return (
