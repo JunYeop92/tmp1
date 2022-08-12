@@ -17,7 +17,7 @@ const keywordList: Record<string, string> = {
   point: '%EB%A7%88%EC%9D%B4%EB%94%94+%ED%8F%AC%EC%9D%B8%ED%8A%B8',
 }
 
-const delay = 5000
+const delay = 3000
 
 export default function Tmp() {
   const sleep = (ms: number) =>
