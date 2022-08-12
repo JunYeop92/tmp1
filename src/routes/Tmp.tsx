@@ -5,7 +5,7 @@ export default function Tmp() {
   const handlePopup = () => {
     window.open('https://myd.world/')
     window.open('https://www.naver.com/')
-    window.open('https://www.youtube.com/')
+    window.open('https://www.daum.net/')
   }
 
   return (
