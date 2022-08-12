@@ -3,7 +3,7 @@ import Button from './mydSearch/Button'
 import { useEffect, useState } from 'react'
 
 export default function Tmp() {
-  const [isTmp, setIsTmp] = useState(true)
+  const [isTmp, setIsTmp] = useState(false)
 
   const handlePopup = () => {
     setIsTmp(true)
