@@ -1,25 +1,50 @@
 import styles from './mydSearch/index.module.scss'
 import Button from './mydSearch/Button'
-import { useEffect, useState } from 'react'
 
 export default function Tmp() {
-  const [isTmp, setIsTmp] = useState(false)
-
-  const handlePopup = () => {
-    setIsTmp(true)
+  const tmp1 = () => {
+    window.open('https://www.google.com/webhp?hl=ko&sa=X&ved=0ahUKEwjxyN24tsD5AhUJFIgKHWBECyIQPAgI')
   }
 
-  useEffect(() => {
-    if (!isTmp) return
+  const tmp2 = () => {
+    window.open('https://www.naver.com/')
+  }
 
-    window.open('https://www.google.com/webhp?hl=ko&sa=X&ved=0ahUKEwjxyN24tsD5AhUJFIgKHWBECyIQPAgI', '', 'noopener')
-    window.open('https://www.naver.com/', '', 'noopener')
-  }, [isTmp])
+  const handlePopup = () => {
+    tmp1()
+    tmp2()
+  }
+
+  const sleep = (ms: number) =>
+    new Promise((resolve) => {
+      setTimeout(resolve, ms)
+    })
+
+  const handlePopup2 = async () => {
+    const win = window.open() as Window
+    win.location.href = 'https://www.naver.com/'
+
+    await sleep(1000).then(() => {
+      win.location.href = 'https://www.daum.net/'
+    })
+
+    await sleep(1000).then(() => {
+      win.location.href = 'https://dribbble.com/'
+    })
+
+    await sleep(1000).then(() => {
+      win.close()
+    })
+  }
 
   return (
     <div className={styles.wrapper}>
       <Button type='button' onClick={handlePopup}>
         열기
+      </Button>
+
+      <Button type='button' onClick={handlePopup2}>
+        열기2
       </Button>
     </div>
   )
