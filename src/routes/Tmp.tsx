@@ -1,11 +1,20 @@
 import styles from './mydSearch/index.module.scss'
 import Button from './mydSearch/Button'
+import { useEffect, useState } from 'react'
 
 export default function Tmp() {
+  const [isTmp, setIsTmp] = useState(true)
+
   const handlePopup = () => {
-    window.open('https://www.google.com/webhp?hl=ko&sa=X&ved=0ahUKEwjxyN24tsD5AhUJFIgKHWBECyIQPAgI', '', 'popup')
-    window.open('https://www.naver.com/', '', 'popup')
+    setIsTmp(true)
   }
+
+  useEffect(() => {
+    if (!isTmp) return
+
+    window.open('https://www.google.com/webhp?hl=ko&sa=X&ved=0ahUKEwjxyN24tsD5AhUJFIgKHWBECyIQPAgI', '', 'noopener')
+    window.open('https://www.naver.com/', '', 'noopener')
+  }, [isTmp])
 
   return (
     <div className={styles.wrapper}>
