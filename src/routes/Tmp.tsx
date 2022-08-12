@@ -3,11 +3,8 @@ import Button from './mydSearch/Button'
 
 export default function Tmp() {
   const handlePopup = () => {
-    window.open('https://www.google.com/webhp?hl=ko&sa=X&ved=0ahUKEwjxyN24tsD5AhUJFIgKHWBECyIQPAgI')
-
-    setTimeout(() => {
-      window.open('https://www.naver.com/')
-    }, 3000)
+    window.open('https://www.google.com/webhp?hl=ko&sa=X&ved=0ahUKEwjxyN24tsD5AhUJFIgKHWBECyIQPAgI', '_blank')
+    window.open('https://www.naver.com/', '_blank')
   }
 
   return (

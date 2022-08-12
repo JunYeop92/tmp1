@@ -65,7 +65,7 @@ export default function MydSearch() {
       win10?.close()
       win11?.close()
       win12?.close()
-    }, 1000)
+    }, 5000)
   }
 
   return (
